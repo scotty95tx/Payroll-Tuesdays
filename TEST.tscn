@@ -1,13 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjt4f7533n2h7"]
+[gd_scene load_steps=2 format=3 uid="uid://cjt4f7533n2h7"]
 
 [ext_resource type="ArrayMesh" uid="uid://mwpc5b0c5nbx" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/house_type05.obj" id="1_3kxtl"]
-[ext_resource type="PackedScene" uid="uid://cvp2tpjqjsvxo" path="res://Assets/kenney_nature-kit/Models/DAE format/bed.dae" id="2_6llvv"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="HouseType05" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0866115, 0, -0.281103)
 mesh = ExtResource("1_3kxtl")
-
-[node name="bed" parent="." instance=ExtResource("2_6llvv")]
-transform = Transform3D(0.539962, 0, 0, 0, 0.539962, 0, 0, 0, 0.539962, 1.19318, 0, 0.195597)
