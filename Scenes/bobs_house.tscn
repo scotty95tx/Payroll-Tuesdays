@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://h0ab7vhgwo8a"]
+
+[ext_resource type="ArrayMesh" uid="uid://upvu004laja7" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/house_type06.obj" id="1_0qr15"]
+[ext_resource type="ArrayMesh" uid="uid://dsfqkj8csds2c" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/driveway_long.obj" id="2_iqnjg"]
+[ext_resource type="ArrayMesh" uid="uid://v1d84ruqq4ow" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/path_tilesLong.obj" id="3_lsjtg"]
+[ext_resource type="ArrayMesh" uid="uid://ejgpk18eeqqq" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/tree_large.obj" id="4_8qj75"]
+[ext_resource type="ArrayMesh" uid="uid://51fiqmr42tqx" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/tree_small.obj" id="5_itigt"]
+[ext_resource type="ArrayMesh" uid="uid://b3kktwbck6brm" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/fence_large.obj" id="6_67qf7"]
+[ext_resource type="PackedScene" uid="uid://c1fg864fqy7lx" path="res://Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/fbx/car_sedan.fbx" id="7_52tvu"]
+
+[node name="BobsHouse" type="Node3D"]
+
+[node name="HouseType06" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00474811, 0, -1.55443, 0, 1.55442, 0, 1.55443, 0, -0.00474811, 2.56069, -0.051756, -0.312838)
+mesh = ExtResource("1_0qr15")
+skeleton = NodePath("../../..")
+
+[node name="DrivewayLong" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.56525e-07, 0, 3.58087, 0, 3.58087, 0, -3.58087, 0, -1.56525e-07, 2.47724, -0.0712624, 1.31462)
+mesh = ExtResource("2_iqnjg")
+skeleton = NodePath("../..")
+
+[node name="DrivewayLong2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.56525e-07, 0, 3.58087, 0, 3.58087, 0, -3.58087, 0, -1.56525e-07, 1.04489, -0.0712624, 1.31462)
+mesh = ExtResource("2_iqnjg")
+skeleton = NodePath("../..")
+
+[node name="DrivewayLong3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.56525e-07, 0, 3.58087, 0, 3.58087, 0, -3.58087, 0, -1.56525e-07, 0.730915, -0.0712624, 1.31462)
+mesh = ExtResource("2_iqnjg")
+skeleton = NodePath("../..")
+
+[node name="PathTilesLong" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0569057, 0, -1.80575, 0, 1.80665, 0, 1.80575, 0, 0.0569057, 1.26947, -0.051756, -0.310487)
+mesh = ExtResource("3_lsjtg")
+skeleton = NodePath("../..")
+
+[node name="PathTilesLong2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0569057, 0, -1.80575, 0, 1.80665, 0, 1.80575, 0, 0.0569057, 0.549418, -0.051756, -0.287795)
+mesh = ExtResource("3_lsjtg")
+skeleton = NodePath("../..")
+
+[node name="TreeLarge" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.585894, -0.051756, 0.487793)
+mesh = ExtResource("4_8qj75")
+skeleton = NodePath("../..")
+
+[node name="TreeSmall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76818, -0.051756, -2.14158)
+mesh = ExtResource("5_itigt")
+skeleton = NodePath("../..")
+
+[node name="TreeSmall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.764818, -0.0517559, -1.53282)
+mesh = ExtResource("5_itigt")
+skeleton = NodePath("../..")
+
+[node name="FenceLarge" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.77721e-08, 0, 1.55045, 0, 1.55045, 0, -1.55045, 0, -6.77721e-08, 4.44061, -0.0407307, -0.31644)
+mesh = ExtResource("6_67qf7")
+skeleton = NodePath("../..")
+
+[node name="car_sedan" parent="." instance=ExtResource("7_52tvu")]
+transform = Transform3D(-0.039783, 0, 0.999208, 0, 1, 0, -0.999208, 0, -0.039783, 1.95537, 0.0288033, 1.32282)
