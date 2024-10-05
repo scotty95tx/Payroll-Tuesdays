@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://dhvffyihxfb4x"]
+
+[ext_resource type="ArrayMesh" uid="uid://ck8o3oudefx6s" path="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/tiles/roads/hex_road_A.obj" id="1_4q8o4"]
+[ext_resource type="PackedScene" uid="uid://dmqhpdkytynp1" path="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/gltf/buildings/blue/building_archeryrange_blue.gltf" id="2_4wk0j"]
+[ext_resource type="ArrayMesh" uid="uid://dg1alk26etasy" path="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/tiles/base/hex_grass.obj" id="3_pv2st"]
+[ext_resource type="ArrayMesh" uid="uid://bn25k66u3o6ro" path="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/tiles/roads/hex_road_E.obj" id="4_6osph"]
+[ext_resource type="ArrayMesh" uid="uid://c606ytlxrp5w2" path="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/decoration/props/anchor.obj" id="5_18gfa"]
+[ext_resource type="PackedScene" uid="uid://dcmnop4gd1h2h" path="res://Scenes/player.tscn" id="6_0qdni"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h81mb"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_r82e6"]
+sky_material = SubResource("ProceduralSkyMaterial_h81mb")
+radiance_size = 0
+
+[sub_resource type="Environment" id="Environment_cb7qk"]
+background_mode = 2
+sky = SubResource("Sky_r82e6")
+tonemap_mode = 2
+sdfgi_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.546708, 0.576376, 0.298608, 1)
+fog_density = 0.0394
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lgx5x"]
+radius = 0.108127
+height = 0.537012
+
+[node name="World" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_energy = 0.1
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cb7qk")
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="building_archeryrange_blue2" parent="Map" instance=ExtResource("2_4wk0j")]
+transform = Transform3D(-0.349799, 0, -0.936825, 0, 1, 0, 0.936825, 0, -0.349799, 0.782889, -0.0170692, -0.98761)
+
+[node name="Ground" type="StaticBody3D" parent="Map"]
+
+[node name="HexRoadA3" type="MeshInstance3D" parent="Map/Ground"]
+transform = Transform3D(-3.95838e-08, 0, 0.905572, 0, 0.905572, 0, -0.905572, 0, -3.95838e-08, -0.0244201, -2.15905e-07, 0.919287)
+mesh = ExtResource("1_4q8o4")
+skeleton = NodePath("../../..")
+
+[node name="HexRoadA" type="MeshInstance3D" parent="Map/Ground"]
+transform = Transform3D(-3.95838e-08, 0, 0.905572, 0, 0.905572, 0, -0.905572, 0, -3.95838e-08, -0.0244201, -2.15905e-07, -0.891857)
+mesh = ExtResource("1_4q8o4")
+skeleton = NodePath("../../..")
+
+[node name="HexGrass" type="MeshInstance3D" parent="Map/Ground"]
+transform = Transform3D(0.784248, 0, -0.452786, 0, 0.905572, 0, 0.452786, 0, 0.784248, -1.55412, 0, -1.80408)
+mesh = ExtResource("3_pv2st")
+skeleton = NodePath("../../..")
+
+[node name="HexGrass2" type="MeshInstance3D" parent="Map/Ground"]
+transform = Transform3D(0.784248, 0, -0.452786, 0, 0.905572, 0, 0.452786, 0, 0.784248, -1.5089, -0.0465372, -0.0462318)
+mesh = ExtResource("3_pv2st")
+skeleton = NodePath("../../..")
+
+[node name="HexRoadA2" type="MeshInstance3D" parent="Map/Ground"]
+transform = Transform3D(-3.95838e-08, 0, 0.905572, 0, 0.905572, 0, -0.905572, 0, -3.95838e-08, -0.0149674, 0, -2.68947)
+mesh = ExtResource("1_4q8o4")
+skeleton = NodePath("../..")
+
+[node name="HexRoadE" type="MeshInstance3D" parent="Map/Ground"]
+transform = Transform3D(0.742046, 0, 0.519065, 0, 0.905572, 0, -0.519065, 0, 0.742046, 0.0386993, 0, 2.66764)
+mesh = ExtResource("4_6osph")
+skeleton = NodePath("../../..")
+
+[node name="Anchor" type="MeshInstance3D" parent="Map/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00632, 0, -0.356227)
+mesh = ExtResource("5_18gfa")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Ground/Anchor"]
+shape = SubResource("CapsuleShape3D_lgx5x")
+disabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Map/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.551756, 0)
+use_collision = true
+size = Vector3(1000, 1, 1000)
+
+[node name="Player" parent="." instance=ExtResource("6_0qdni")]
+transform = Transform3D(0.186956, 0, 0, 0, 0.186956, 0, 0, 0, 0.186956, -0.81505, 0.114289, 0.352984)
+sens_horizontal = 0.3
+sens_vertical = 0.3

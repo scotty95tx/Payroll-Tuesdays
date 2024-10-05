@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://6ogw15u356e8"]
+
+[ext_resource type="PackedScene" uid="uid://4osm274t0msy" path="res://PayrollSpecialist.tscn" id="1_r4vdy"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qufva"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.82384, 0, 0, 0, 7.82384, 0, 0, 0, 7.82384, 0, 0, 0)
+mesh = SubResource("PlaneMesh_qufva")
+
+[node name="PayrollSpecialist" parent="." instance=ExtResource("1_r4vdy")]
+transform = Transform3D(0.955466, 0, 0, 0, 0.955466, 0, 0, 0, 0.955466, 0, 0, 0)

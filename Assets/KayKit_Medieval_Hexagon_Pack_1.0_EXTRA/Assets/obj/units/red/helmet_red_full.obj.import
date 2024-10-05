@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dkvllj526wg0j"
+path="res://.godot/imported/helmet_red_full.obj-a5ed1bd79b1b99d5d3cd1fe6a280c299.mesh"
+
+[deps]
+
+files=["res://.godot/imported/helmet_red_full.obj-a5ed1bd79b1b99d5d3cd1fe6a280c299.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/units/red/helmet_red_full.obj"
+dest_files=["res://.godot/imported/helmet_red_full.obj-a5ed1bd79b1b99d5d3cd1fe6a280c299.mesh", "res://.godot/imported/helmet_red_full.obj-a5ed1bd79b1b99d5d3cd1fe6a280c299.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

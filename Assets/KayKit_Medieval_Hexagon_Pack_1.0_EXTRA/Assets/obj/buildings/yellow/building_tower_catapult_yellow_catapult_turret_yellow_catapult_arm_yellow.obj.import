@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dgr08n5ybmo4x"
+path="res://.godot/imported/building_tower_catapult_yellow_catapult_turret_yellow_catapult_arm_yellow.obj-af2fc3c381e79cf630a947daa0c532ca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_tower_catapult_yellow_catapult_turret_yellow_catapult_arm_yellow.obj-af2fc3c381e79cf630a947daa0c532ca.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/buildings/yellow/building_tower_catapult_yellow_catapult_turret_yellow_catapult_arm_yellow.obj"
+dest_files=["res://.godot/imported/building_tower_catapult_yellow_catapult_turret_yellow_catapult_arm_yellow.obj-af2fc3c381e79cf630a947daa0c532ca.mesh", "res://.godot/imported/building_tower_catapult_yellow_catapult_turret_yellow_catapult_arm_yellow.obj-af2fc3c381e79cf630a947daa0c532ca.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

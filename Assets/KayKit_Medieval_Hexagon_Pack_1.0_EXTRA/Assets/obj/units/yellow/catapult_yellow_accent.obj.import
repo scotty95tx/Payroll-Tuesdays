@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dcmghb1vudrtk"
+path="res://.godot/imported/catapult_yellow_accent.obj-e7328d09af0469a5de2f0f3b8205258e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/catapult_yellow_accent.obj-e7328d09af0469a5de2f0f3b8205258e.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/units/yellow/catapult_yellow_accent.obj"
+dest_files=["res://.godot/imported/catapult_yellow_accent.obj-e7328d09af0469a5de2f0f3b8205258e.mesh", "res://.godot/imported/catapult_yellow_accent.obj-e7328d09af0469a5de2f0f3b8205258e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

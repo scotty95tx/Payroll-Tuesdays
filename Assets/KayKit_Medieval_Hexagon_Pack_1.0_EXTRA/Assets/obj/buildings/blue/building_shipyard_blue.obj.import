@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dk0e7o81exk4k"
+path="res://.godot/imported/building_shipyard_blue.obj-f3de5c50c865d73dc111723845875dcc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_shipyard_blue.obj-f3de5c50c865d73dc111723845875dcc.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/buildings/blue/building_shipyard_blue.obj"
+dest_files=["res://.godot/imported/building_shipyard_blue.obj-f3de5c50c865d73dc111723845875dcc.mesh", "res://.godot/imported/building_shipyard_blue.obj-f3de5c50c865d73dc111723845875dcc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

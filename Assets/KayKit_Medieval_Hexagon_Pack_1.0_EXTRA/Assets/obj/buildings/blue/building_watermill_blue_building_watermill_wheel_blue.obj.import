@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqv4xlxoxrmoh"
+path="res://.godot/imported/building_watermill_blue_building_watermill_wheel_blue.obj-1ffdca634257dc3bd7bfa0d1419b53dc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_watermill_blue_building_watermill_wheel_blue.obj-1ffdca634257dc3bd7bfa0d1419b53dc.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/buildings/blue/building_watermill_blue_building_watermill_wheel_blue.obj"
+dest_files=["res://.godot/imported/building_watermill_blue_building_watermill_wheel_blue.obj-1ffdca634257dc3bd7bfa0d1419b53dc.mesh", "res://.godot/imported/building_watermill_blue_building_watermill_wheel_blue.obj-1ffdca634257dc3bd7bfa0d1419b53dc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

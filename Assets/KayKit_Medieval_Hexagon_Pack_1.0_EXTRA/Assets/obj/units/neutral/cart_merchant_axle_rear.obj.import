@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ckbx26yk5t40w"
+path="res://.godot/imported/cart_merchant_axle_rear.obj-2ea63f373933b2158ba31358b16bfe46.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cart_merchant_axle_rear.obj-2ea63f373933b2158ba31358b16bfe46.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/units/neutral/cart_merchant_axle_rear.obj"
+dest_files=["res://.godot/imported/cart_merchant_axle_rear.obj-2ea63f373933b2158ba31358b16bfe46.mesh", "res://.godot/imported/cart_merchant_axle_rear.obj-2ea63f373933b2158ba31358b16bfe46.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

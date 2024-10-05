@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://mdcye4gan2fe"
+path="res://.godot/imported/building_townhall_blue.obj-02af8079baff4502888dc871b023d9f4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_townhall_blue.obj-02af8079baff4502888dc871b023d9f4.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/buildings/blue/building_townhall_blue.obj"
+dest_files=["res://.godot/imported/building_townhall_blue.obj-02af8079baff4502888dc871b023d9f4.mesh", "res://.godot/imported/building_townhall_blue.obj-02af8079baff4502888dc871b023d9f4.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

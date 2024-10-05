@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cmetrqg1xha8r"
+path="res://.godot/imported/building_docks_red.obj-a68d32edf88d5bbeb741a4e2abb0f6ac.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_docks_red.obj-a68d32edf88d5bbeb741a4e2abb0f6ac.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/buildings/red/building_docks_red.obj"
+dest_files=["res://.godot/imported/building_docks_red.obj-a68d32edf88d5bbeb741a4e2abb0f6ac.mesh", "res://.godot/imported/building_docks_red.obj-a68d32edf88d5bbeb741a4e2abb0f6ac.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://sbbfvr0ied6u"
+path="res://.godot/imported/catapult_yellow_accent_catapult_axle_rear_yellow_accent.obj-62119fb01fc4e51ffc1802efc63ee174.mesh"
+
+[deps]
+
+files=["res://.godot/imported/catapult_yellow_accent_catapult_axle_rear_yellow_accent.obj-62119fb01fc4e51ffc1802efc63ee174.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/units/yellow/catapult_yellow_accent_catapult_axle_rear_yellow_accent.obj"
+dest_files=["res://.godot/imported/catapult_yellow_accent_catapult_axle_rear_yellow_accent.obj-62119fb01fc4e51ffc1802efc63ee174.mesh", "res://.godot/imported/catapult_yellow_accent_catapult_axle_rear_yellow_accent.obj-62119fb01fc4e51ffc1802efc63ee174.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c43be6tek84a7"
+path="res://.godot/imported/spear_yellow_accent.obj-75e72be0850d1b0d23c00a19bc1f0a31.mesh"
+
+[deps]
+
+files=["res://.godot/imported/spear_yellow_accent.obj-75e72be0850d1b0d23c00a19bc1f0a31.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/units/yellow/spear_yellow_accent.obj"
+dest_files=["res://.godot/imported/spear_yellow_accent.obj-75e72be0850d1b0d23c00a19bc1f0a31.mesh", "res://.godot/imported/spear_yellow_accent.obj-75e72be0850d1b0d23c00a19bc1f0a31.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
