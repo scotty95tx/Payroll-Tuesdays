@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8521rjv2jshk"
+path="res://.godot/imported/catapult_blue_full_catapult_arm_blue_full.obj-c4e3c14dc5e0ca51bb31d318b85989b6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/catapult_blue_full_catapult_arm_blue_full.obj-c4e3c14dc5e0ca51bb31d318b85989b6.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/units/blue/catapult_blue_full_catapult_arm_blue_full.obj"
+dest_files=["res://.godot/imported/catapult_blue_full_catapult_arm_blue_full.obj-c4e3c14dc5e0ca51bb31d318b85989b6.mesh", "res://.godot/imported/catapult_blue_full_catapult_arm_blue_full.obj-c4e3c14dc5e0ca51bb31d318b85989b6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

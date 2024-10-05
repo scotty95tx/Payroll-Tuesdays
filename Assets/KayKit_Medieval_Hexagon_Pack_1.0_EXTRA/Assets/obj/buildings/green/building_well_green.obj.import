@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bau3nkvadl14t"
+path="res://.godot/imported/building_well_green.obj-f6cbd2d3c4a64de4b6a23f179fb1d190.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_well_green.obj-f6cbd2d3c4a64de4b6a23f179fb1d190.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/buildings/green/building_well_green.obj"
+dest_files=["res://.godot/imported/building_well_green.obj-f6cbd2d3c4a64de4b6a23f179fb1d190.mesh", "res://.godot/imported/building_well_green.obj-f6cbd2d3c4a64de4b6a23f179fb1d190.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

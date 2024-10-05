@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://k56m0ivt8k4g"
+path="res://.godot/imported/cannon_blue_accent.obj-15d910ee1fdb7c54a5c8676306159701.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cannon_blue_accent.obj-15d910ee1fdb7c54a5c8676306159701.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/units/blue/cannon_blue_accent.obj"
+dest_files=["res://.godot/imported/cannon_blue_accent.obj-15d910ee1fdb7c54a5c8676306159701.mesh", "res://.godot/imported/cannon_blue_accent.obj-15d910ee1fdb7c54a5c8676306159701.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

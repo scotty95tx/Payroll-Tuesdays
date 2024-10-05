@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://onvlr1noacn"
+path="res://.godot/imported/horse_saddle.obj-5f6f56ac913f75f0a440dd6c324c6786.mesh"
+
+[deps]
+
+files=["res://.godot/imported/horse_saddle.obj-5f6f56ac913f75f0a440dd6c324c6786.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/units/neutral/horse_saddle.obj"
+dest_files=["res://.godot/imported/horse_saddle.obj-5f6f56ac913f75f0a440dd6c324c6786.mesh", "res://.godot/imported/horse_saddle.obj-5f6f56ac913f75f0a440dd6c324c6786.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

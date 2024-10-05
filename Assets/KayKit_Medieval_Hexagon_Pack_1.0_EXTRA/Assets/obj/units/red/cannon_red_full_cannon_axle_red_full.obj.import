@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b64spq3ri1qdt"
+path="res://.godot/imported/cannon_red_full_cannon_axle_red_full.obj-d161f8e78101d3fbfcc79f178db8c84b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cannon_red_full_cannon_axle_red_full.obj-d161f8e78101d3fbfcc79f178db8c84b.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/units/red/cannon_red_full_cannon_axle_red_full.obj"
+dest_files=["res://.godot/imported/cannon_red_full_cannon_axle_red_full.obj-d161f8e78101d3fbfcc79f178db8c84b.mesh", "res://.godot/imported/cannon_red_full_cannon_axle_red_full.obj-d161f8e78101d3fbfcc79f178db8c84b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://csl3tup0qs7f3"
+path="res://.godot/imported/building_mine_red.obj-2ac4c8d89b8a696cbc8536e5b00dbab5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_mine_red.obj-2ac4c8d89b8a696cbc8536e5b00dbab5.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/buildings/red/building_mine_red.obj"
+dest_files=["res://.godot/imported/building_mine_red.obj-2ac4c8d89b8a696cbc8536e5b00dbab5.mesh", "res://.godot/imported/building_mine_red.obj-2ac4c8d89b8a696cbc8536e5b00dbab5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

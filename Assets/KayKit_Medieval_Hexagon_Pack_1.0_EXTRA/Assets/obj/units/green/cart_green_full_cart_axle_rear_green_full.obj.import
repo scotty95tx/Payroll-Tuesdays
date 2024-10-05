@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://0dleyfgm8ety"
+path="res://.godot/imported/cart_green_full_cart_axle_rear_green_full.obj-3554f99725f16c5ff3ec5c1e1b5db9df.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cart_green_full_cart_axle_rear_green_full.obj-3554f99725f16c5ff3ec5c1e1b5db9df.mesh"]
+
+source_file="res://Assets/KayKit_Medieval_Hexagon_Pack_1.0_EXTRA/Assets/obj/units/green/cart_green_full_cart_axle_rear_green_full.obj"
+dest_files=["res://.godot/imported/cart_green_full_cart_axle_rear_green_full.obj-3554f99725f16c5ff3ec5c1e1b5db9df.mesh", "res://.godot/imported/cart_green_full_cart_axle_rear_green_full.obj-3554f99725f16c5ff3ec5c1e1b5db9df.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
