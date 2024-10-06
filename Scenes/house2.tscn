@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://ddelqr7mpokm2"]
+
+[ext_resource type="ArrayMesh" uid="uid://brnbrtdwjwhhb" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/house_type15.obj" id="1_jug3e"]
+[ext_resource type="Script" path="res://Scripts/doorbell.gd" id="2_kgo8m"]
+[ext_resource type="ArrayMesh" uid="uid://dsfqkj8csds2c" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/driveway_long.obj" id="3_8ikuq"]
+[ext_resource type="ArrayMesh" uid="uid://v1d84ruqq4ow" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/path_tilesLong.obj" id="4_3huor"]
+[ext_resource type="ArrayMesh" uid="uid://ejgpk18eeqqq" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/tree_large.obj" id="5_nr8p8"]
+[ext_resource type="ArrayMesh" uid="uid://51fiqmr42tqx" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/tree_small.obj" id="6_p8beo"]
+[ext_resource type="ArrayMesh" uid="uid://b3kktwbck6brm" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/fence_large.obj" id="7_dyyyo"]
+[ext_resource type="PackedScene" uid="uid://dxygjt66w7ofo" path="res://Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/fbx/car_police.fbx" id="8_mwux8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nxbu1"]
+size = Vector3(1.1709, 1.09448, 0.861328)
+
+[node name="House2" type="Node3D"]
+
+[node name="HouseType06" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00474811, 0, -1.55443, 0, 1.55442, 0, 1.55443, 0, -0.00474811, 2.56069, -0.051756, -0.312838)
+mesh = ExtResource("1_jug3e")
+skeleton = NodePath("../../..")
+
+[node name="Area3D" type="Area3D" parent="HouseType06"]
+transform = Transform3D(-0.0419603, 0, 15.8308, 0, 35.8092, 0, -13.7369, 0, -0.0483561, 0.00077337, 0.170087, 0.594319)
+script = ExtResource("2_kgo8m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HouseType06/Area3D"]
+transform = Transform3D(0.01, 0, -1.38778e-17, 0, 0.01, 0, 8.67362e-19, 0, 0.01, 0.0073598, 0.000433419, 0.0126752)
+shape = SubResource("BoxShape3D_nxbu1")
+
+[node name="DrivewayLong" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.56525e-07, 0, 3.58087, 0, 3.58087, 0, -3.58087, 0, -1.56525e-07, 2.47724, -0.0712624, 1.31462)
+mesh = ExtResource("3_8ikuq")
+skeleton = NodePath("../..")
+
+[node name="DrivewayLong2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.56525e-07, 0, 3.58087, 0, 3.58087, 0, -3.58087, 0, -1.56525e-07, 1.04489, -0.0712624, 1.31462)
+mesh = ExtResource("3_8ikuq")
+skeleton = NodePath("../..")
+
+[node name="DrivewayLong3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.56525e-07, 0, 3.58087, 0, 3.58087, 0, -3.58087, 0, -1.56525e-07, 0.730915, -0.0712624, 1.31462)
+mesh = ExtResource("3_8ikuq")
+skeleton = NodePath("../..")
+
+[node name="PathTilesLong" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0569057, 0, -1.80575, 0, 1.80665, 0, 1.80575, 0, 0.0569057, 1.26947, -0.051756, -0.00678286)
+mesh = ExtResource("4_3huor")
+skeleton = NodePath("../..")
+
+[node name="PathTilesLong2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0569057, 0, -1.80575, 0, 1.80665, 0, 1.80575, 0, 0.0569057, 0.549418, -0.051756, 0.0159091)
+mesh = ExtResource("4_3huor")
+skeleton = NodePath("../..")
+
+[node name="TreeLarge" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.585894, -0.051756, 0.487793)
+mesh = ExtResource("5_nr8p8")
+skeleton = NodePath("../..")
+
+[node name="TreeSmall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76818, -0.051756, -2.14158)
+mesh = ExtResource("6_p8beo")
+skeleton = NodePath("../..")
+
+[node name="TreeSmall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.764818, -0.0517559, -1.53282)
+mesh = ExtResource("6_p8beo")
+skeleton = NodePath("../..")
+
+[node name="FenceLarge" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.77721e-08, 0, 1.55045, 0, 1.55045, 0, -1.55045, 0, -6.77721e-08, 4.44061, -0.0407307, -0.31644)
+mesh = ExtResource("7_dyyyo")
+skeleton = NodePath("../..")
+
+[node name="car_police" parent="." instance=ExtResource("8_mwux8")]
+transform = Transform3D(-0.0272063, 0, 0.99963, 0, 1, 0, -0.99963, 0, -0.0272063, 1.64953, 0.0180666, 1.30674)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DoorbellLabel" type="Label3D" parent="CanvasLayer"]
+text = "Press R to ring the doorbell!"
+
+[connection signal="body_entered" from="HouseType06/Area3D" to="HouseType06/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="HouseType06/Area3D" to="HouseType06/Area3D" method="_on_body_exited"]
