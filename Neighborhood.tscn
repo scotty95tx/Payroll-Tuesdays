@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://4sisb84p8mpu"]
+[gd_scene load_steps=5 format=3 uid="uid://4sisb84p8mpu"]
 
 [ext_resource type="PackedScene" uid="uid://cgnjpk66cd3xq" path="res://Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/road_straight.gltf" id="1_ebs7b"]
 [ext_resource type="PackedScene" uid="uid://bc3had0rudf45" path="res://Scenes/street_lamp.tscn" id="3_8b5wg"]
 [ext_resource type="PackedScene" uid="uid://h0ab7vhgwo8a" path="res://Scenes/bobs_house.tscn" id="3_bdln8"]
+[ext_resource type="PackedScene" uid="uid://ddelqr7mpokm2" path="res://Scenes/house2.tscn" id="4_t61u4"]
 
 [node name="Map" type="Node3D"]
 
@@ -32,6 +33,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.998132, -0.120792, -5.7481
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.84231)
 
 [node name="BobsHouse" parent="." instance=ExtResource("3_bdln8")]
+
+[node name="House2" parent="." instance=ExtResource("4_t61u4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.10534)
 
 [node name="StreetLamp2" parent="." instance=ExtResource("3_8b5wg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71529, -0.051756, -1.69766)
