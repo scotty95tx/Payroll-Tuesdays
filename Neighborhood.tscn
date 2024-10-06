@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://4sisb84p8mpu"]
+[gd_scene load_steps=4 format=3 uid="uid://cw7yut60oyglc"]
 
 [ext_resource type="PackedScene" uid="uid://cgnjpk66cd3xq" path="res://Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/road_straight.gltf" id="1_ebs7b"]
-[ext_resource type="PackedScene" uid="uid://bc3had0rudf45" path="res://Scenes/street_lamp.tscn" id="3_8b5wg"]
-[ext_resource type="PackedScene" uid="uid://h0ab7vhgwo8a" path="res://Scenes/bobs_house.tscn" id="3_bdln8"]
+[ext_resource type="PackedScene" uid="uid://cp5jkpsqm8tgt" path="res://Scenes/street_lamp.tscn" id="3_8b5wg"]
+[ext_resource type="PackedScene" uid="uid://dg5kom1djbgcv" path="res://Scenes/bobs_house.tscn" id="3_bdln8"]
 
 [node name="Map" type="Node3D"]
 

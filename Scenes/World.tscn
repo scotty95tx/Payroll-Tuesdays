@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://c680qw5fwx4b3"]
+
+[ext_resource type="PackedScene" uid="uid://dcmnop4gd1h2h" path="res://Scenes/player.tscn" id="2_1ncq1"]
+[ext_resource type="Script" path="res://Scenes/game_manager.gd" id="3_a1ybi"]
+[ext_resource type="PackedScene" uid="uid://qjs4x1xjx28b" path="res://Scenes/Neighborhood.tscn" id="4_bewa4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hehmt"]
+sky_top_color = Color(0.0936, 0.2046, 0.36, 1)
+sky_horizon_color = Color(0.1127, 0.257332, 0.49, 1)
+
+[sub_resource type="Sky" id="Sky_obmg8"]
+sky_material = SubResource("ProceduralSkyMaterial_hehmt")
+
+[sub_resource type="Environment" id="Environment_13nmy"]
+background_mode = 2
+background_energy_multiplier = 0.1
+sky = SubResource("Sky_obmg8")
+fog_light_energy = 1.69
+fog_density = 0.08
+
+[node name="World" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.192443, 0.24025, 0.411727, 1)
+shadow_enabled = true
+
+[node name="Neighborhood2" parent="." instance=ExtResource("4_bewa4")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_13nmy")
+
+[node name="Player" parent="." instance=ExtResource("2_1ncq1")]
+transform = Transform3D(0.157094, 0, 0, 0, 0.157094, 0, 0, 0, 0.157094, -1.1209, -0.0710871, 1.05894)
+
+[node name="GameManager" type="Node3D" parent="."]
+script = ExtResource("3_a1ybi")

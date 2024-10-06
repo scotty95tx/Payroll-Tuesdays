@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://h0ab7vhgwo8a"]
+[gd_scene load_steps=10 format=3 uid="uid://dg5kom1djbgcv"]
 
 [ext_resource type="ArrayMesh" uid="uid://upvu004laja7" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/house_type06.obj" id="1_0qr15"]
 [ext_resource type="Script" path="res://Scripts/doorbell.gd" id="2_0c6wn"]
