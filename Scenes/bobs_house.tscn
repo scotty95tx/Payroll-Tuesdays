@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://h0ab7vhgwo8a"]
+[gd_scene load_steps=10 format=3 uid="uid://h0ab7vhgwo8a"]
 
 [ext_resource type="ArrayMesh" uid="uid://upvu004laja7" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/house_type06.obj" id="1_0qr15"]
+[ext_resource type="Script" path="res://Scripts/doorbell.gd" id="2_0c6wn"]
 [ext_resource type="ArrayMesh" uid="uid://dsfqkj8csds2c" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/driveway_long.obj" id="2_iqnjg"]
 [ext_resource type="ArrayMesh" uid="uid://v1d84ruqq4ow" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/path_tilesLong.obj" id="3_lsjtg"]
 [ext_resource type="ArrayMesh" uid="uid://ejgpk18eeqqq" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/tree_large.obj" id="4_8qj75"]
@@ -8,12 +9,23 @@
 [ext_resource type="ArrayMesh" uid="uid://b3kktwbck6brm" path="res://Assets/kenney_city-kit-suburban/Models/OBJ format/fence_large.obj" id="6_67qf7"]
 [ext_resource type="PackedScene" uid="uid://c1fg864fqy7lx" path="res://Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/fbx/car_sedan.fbx" id="7_52tvu"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_nxbu1"]
+size = Vector3(1.1709, 1.09448, 0.861328)
+
 [node name="BobsHouse" type="Node3D"]
 
 [node name="HouseType06" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.00474811, 0, -1.55443, 0, 1.55442, 0, 1.55443, 0, -0.00474811, 2.56069, -0.051756, -0.312838)
 mesh = ExtResource("1_0qr15")
 skeleton = NodePath("../../..")
+
+[node name="Area3D" type="Area3D" parent="HouseType06"]
+transform = Transform3D(-0.0419603, 0, 15.8308, 0, 35.8092, 0, -13.7369, 0, -0.0483561, 0.00077337, 0.170087, 0.594319)
+script = ExtResource("2_0c6wn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HouseType06/Area3D"]
+transform = Transform3D(0.01, 0, 4.17177e-19, 0, 0.01, 0, -4.17177e-19, 0, 0.01, -0.00504223, 0.000433419, -0.000391931)
+shape = SubResource("BoxShape3D_nxbu1")
 
 [node name="DrivewayLong" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.56525e-07, 0, 3.58087, 0, 3.58087, 0, -3.58087, 0, -1.56525e-07, 2.47724, -0.0712624, 1.31462)
@@ -62,3 +74,6 @@ skeleton = NodePath("../..")
 
 [node name="car_sedan" parent="." instance=ExtResource("7_52tvu")]
 transform = Transform3D(-0.039783, 0, 0.999208, 0, 1, 0, -0.999208, 0, -0.039783, 1.95537, 0.0288033, 1.32282)
+
+[connection signal="body_entered" from="HouseType06/Area3D" to="HouseType06/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="HouseType06/Area3D" to="HouseType06/Area3D" method="_on_body_exited"]

@@ -11,6 +11,7 @@ const SPEED = 1.2
 @export var sens_vertical = 0.5
 
 func _ready():
+	add_to_group("Player")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func _input(event):
