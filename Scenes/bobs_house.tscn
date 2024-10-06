@@ -73,7 +73,12 @@ mesh = ExtResource("6_67qf7")
 skeleton = NodePath("../..")
 
 [node name="car_sedan" parent="." instance=ExtResource("7_52tvu")]
-transform = Transform3D(-0.039783, 0, 0.999208, 0, 1, 0, -0.999208, 0, -0.039783, 1.95537, 0.0288033, 1.32282)
+transform = Transform3D(-0.0437613, 0, 1.09913, 0, 1.1, 0, -1.09913, 0, -0.0437613, 1.95537, 0.0288033, 1.32282)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DoorbellLabel" type="Label3D" parent="CanvasLayer"]
+text = "Press R to ring the doorbell!"
 
 [connection signal="body_entered" from="HouseType06/Area3D" to="HouseType06/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="HouseType06/Area3D" to="HouseType06/Area3D" method="_on_body_exited"]

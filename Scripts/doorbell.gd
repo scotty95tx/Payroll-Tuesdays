@@ -1,12 +1,16 @@
 extends Area3D
 
-var is_near_doorbell = false
+var is_near_doorbell = false 
 
 func ring_doorbell():
 	print("doorbell rang")
 
 func _ready() -> void:
-	pass # Replace with function body.
+	var doorbell_label = get_node("CanvasLayer/DoorbellLabel")
+	if doorbell_label == null:
+		print("not found doorbell")
+	else:
+		print("Dorbell has been found")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
