@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://jnmnkwb5m8qv"]
+
+[ext_resource type="PackedScene" uid="uid://brvfodbccr2en" path="res://Assets/KayKit_Adventurers_1.0_EXTRA/Assets/fbx/shotgun.fbx" id="1_lyjp7"]
+
+[sub_resource type="Animation" id="Animation_dm0g5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("shotgun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lg01y"]
+resource_name = "blast"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("shotgun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.05), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_byrxa"]
+_data = {
+"RESET": SubResource("Animation_dm0g5"),
+"blast": SubResource("Animation_lg01y")
+}
+
+[node name="Blaster" instance=ExtResource("1_lyjp7")]
+
+[node name="shotgun" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_byrxa")
+}
+
+[node name="RayCast3D" type="RayCast3D" parent="." index="2"]
+transform = Transform3D(-5.5081, 0, -2.57202e-07, 9.06775e-09, 6.38267, -0.0554017, 4.81448e-07, -0.120213, -2.94153, 0.109652, 0.143181, 1.30128)
+target_position = Vector3(0, 0, -1)
+collision_mask = 3
+hit_from_inside = true
+collide_with_areas = true

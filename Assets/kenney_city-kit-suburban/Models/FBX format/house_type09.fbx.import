@@ -31,7 +31,30 @@ animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"_defaultMat": {
+"use_external/enabled": true,
+"use_external/path": ""
+},
+"border": {
+"use_external/enabled": true,
+"use_external/path": ""
+},
+"door": {
+"use_external/enabled": true,
+"use_external/path": ""
+},
+"roof": {
+"use_external/enabled": true,
+"use_external/path": ""
+},
+"window": {
+"use_external/enabled": true,
+"use_external/path": ""
+}
+}
+}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1

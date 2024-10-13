@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxg6ypenfr0jr"]
-
-[ext_resource type="PackedScene" uid="uid://diyuf5w0k24we" path="res://Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/streetlight.gltf" id="1_7xslp"]
-
-[node name="streetlight2" instance=ExtResource("1_7xslp")]
-
-[node name="SpotLight3D" type="SpotLight3D" parent="." index="1"]
-transform = Transform3D(0.998399, -0.0150796, 0.0545151, -0.0541055, 0.026355, 0.998187, -0.016489, -0.999539, 0.0254969, -0.188177, 0.938717, 0)

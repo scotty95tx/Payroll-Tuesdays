@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c680qw5fwx4b3"]
+[gd_scene load_steps=10 format=3 uid="uid://c680qw5fwx4b3"]
 
+[ext_resource type="Script" path="res://Scenes/world.gd" id="1_5qy3w"]
 [ext_resource type="PackedScene" uid="uid://dcmnop4gd1h2h" path="res://Scenes/player.tscn" id="2_1ncq1"]
-[ext_resource type="Script" path="res://Scenes/game_manager.gd" id="3_a1ybi"]
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="3_a1ybi"]
+[ext_resource type="Script" path="res://Scripts/dialogue_box.gd" id="4_13dyx"]
 [ext_resource type="PackedScene" uid="uid://qjs4x1xjx28b" path="res://Scenes/Neighborhood.tscn" id="4_bewa4"]
+[ext_resource type="Script" path="res://Scripts/timecards_submitted.gd" id="5_svymx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hehmt"]
 sky_top_color = Color(0.0936, 0.2046, 0.36, 1)
@@ -15,17 +18,14 @@ sky_material = SubResource("ProceduralSkyMaterial_hehmt")
 background_mode = 2
 background_energy_multiplier = 0.1
 sky = SubResource("Sky_obmg8")
+glow_enabled = true
 fog_light_energy = 1.69
 fog_density = 0.08
 
 [node name="World" type="Node3D"]
+script = ExtResource("1_5qy3w")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-light_color = Color(0.192443, 0.24025, 0.411727, 1)
-shadow_enabled = true
-
-[node name="Neighborhood2" parent="." instance=ExtResource("4_bewa4")]
+[node name="Neighborhood" parent="." instance=ExtResource("4_bewa4")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_13nmy")
@@ -35,3 +35,94 @@ transform = Transform3D(0.157094, 0, 0, 0, 0.157094, 0, 0, 0, 0.157094, -1.1209,
 
 [node name="GameManager" type="Node3D" parent="."]
 script = ExtResource("3_a1ybi")
+dialogue_rules = "You are a character in a videogame rpg. Reply to my questions and never break character. Don't mention that you are an AI or that this is a game. Only repond with your dialogue text and nothing else, but you can imply actions with square brackets.  For example [crying]"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_left = 320.0
+offset_top = 96.0
+offset_right = 912.0
+offset_bottom = 328.0
+script = ExtResource("4_13dyx")
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueText" type="RichTextLabel" parent="CanvasLayer/DialogueBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -16.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Testing TestingTestingTestingTestingTestingTestingTestingTesting"
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerTextInput" type="TextEdit" parent="CanvasLayer/DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.96
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -40.0
+offset_right = -232.0
+offset_bottom = -8.0
+placeholder_text = "Type your guess"
+metadata/_edit_use_anchors_ = true
+
+[node name="Talk" type="Button" parent="CanvasLayer/DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.042
+anchor_top = 0.96
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 343.136
+offset_top = -38.72
+offset_right = -126.0
+offset_bottom = -9.0
+text = "Guess"
+metadata/_edit_use_anchors_ = true
+
+[node name="Leave" type="Button" parent="CanvasLayer/DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014
+anchor_top = 0.96
+anchor_right = 1.0
+anchor_bottom = 0.96
+offset_left = 463.712
+offset_top = -38.72
+offset_right = -16.0
+offset_bottom = 0.279999
+text = "Leave"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_right = 257.0
+offset_bottom = 55.0
+text = "Time cards Submitted: 0 of 7"
+script = ExtResource("5_svymx")
+
+[node name="PlayerHitUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="PlayerHitUI"]
+visible = false
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 645.0
+color = Color(0.898039, 0, 0.0627451, 0.121569)
+
+[connection signal="player_hit" from="Player" to="." method="_on_player_player_hit"]
+[connection signal="pressed" from="CanvasLayer/DialogueBox/Talk" to="Player" method="_on_talk_pressed"]
+[connection signal="pressed" from="CanvasLayer/DialogueBox/Talk" to="CanvasLayer/DialogueBox" method="_on_talk_pressed"]
+[connection signal="pressed" from="CanvasLayer/DialogueBox/Leave" to="CanvasLayer/DialogueBox" method="_on_leave_pressed"]

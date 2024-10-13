@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://de4kbgo1qh8so"]
+
+[ext_resource type="Script" path="res://Scenes/ray.gd" id="1_7okr2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sfbbs"]
+size = Vector3(0.05, 0.05, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x5qil"]
+albedo_color = Color(0.792157, 0.901961, 0.0705882, 1)
+emission_enabled = true
+emission = Color(0.12549, 0.933333, 0, 1)
+emission_energy_multiplier = 50.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0layr"]
+albedo_color = Color(0.881318, 0.810781, 0.0666918, 1)
+emission_enabled = true
+emission = Color(0.316634, 0.855211, 0, 1)
+emission_energy_multiplier = 10.55
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ch4gn"]
+direction = Vector3(0, 0, 1)
+spread = 96.454
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_qkjsu"]
+size = Vector3(0.04, 0.04, 0.04)
+
+[node name="Ray" type="Node3D"]
+transform = Transform3D(1.99429, 0, 0, 0, 1.37904, 0, 0, 0, 1.21913, 0, 0, 0)
+script = ExtResource("1_7okr2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_sfbbs")
+surface_material_override/0 = SubResource("StandardMaterial3D_x5qil")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -0.06)
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.966202, 0, 0, 0, 1.30167, 0, 0, 0, 1, 0, 0, -0.64)
+material_override = SubResource("StandardMaterial3D_0layr")
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ch4gn")
+draw_pass_1 = SubResource("BoxMesh_qkjsu")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
