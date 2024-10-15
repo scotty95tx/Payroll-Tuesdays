@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctreu6blhq1b7"]
+
+[ext_resource type="FontFile" uid="uid://o3fx5klu65mf" path="res://Scenes/CustomAssetts/NewHiScore.ttf" id="1_04jgf"]
+[ext_resource type="Texture2D" uid="uid://cierfk4y8pdic" path="res://Scenes/CustomAssetts/background-2.png" id="1_lfxnh"]
+[ext_resource type="Texture2D" uid="uid://ycfgmcjpbxbf" path="res://Assets/kenney_input-prompts/Nintendo Switch/Default/switch_right.png" id="2_t8sjs"]
+[ext_resource type="Script" path="res://Scenes/play_button.gd" id="4_ct7km"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lfxnh")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.86772, 1, 0.80267, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 11
+theme_override_fonts/font = ExtResource("1_04jgf")
+theme_override_font_sizes/font_size = 90
+text = "Payroll Tuesdays"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_t8sjs")
+script = ExtResource("4_ct7km")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/TextureButton" to="VBoxContainer/HBoxContainer/TextureButton" method="_on_pressed"]

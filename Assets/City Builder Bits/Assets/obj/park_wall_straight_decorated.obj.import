@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfvsh8sgk6j5s"
+path="res://.godot/imported/park_wall_straight_decorated.obj-e7b47b41eb5e92f45faeb3de218c10ca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/park_wall_straight_decorated.obj-e7b47b41eb5e92f45faeb3de218c10ca.mesh"]
+
+source_file="res://Assets/City Builder Bits/Assets/obj/park_wall_straight_decorated.obj"
+dest_files=["res://.godot/imported/park_wall_straight_decorated.obj-e7b47b41eb5e92f45faeb3de218c10ca.mesh", "res://.godot/imported/park_wall_straight_decorated.obj-e7b47b41eb5e92f45faeb3de218c10ca.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

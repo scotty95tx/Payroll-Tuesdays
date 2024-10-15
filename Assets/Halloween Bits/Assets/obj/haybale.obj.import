@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://saswr0grijwm"
+path="res://.godot/imported/haybale.obj-5559bcffd57acde62a4865d5a8f8613e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/haybale.obj-5559bcffd57acde62a4865d5a8f8613e.mesh"]
+
+source_file="res://Assets/Halloween Bits/Assets/obj/haybale.obj"
+dest_files=["res://.godot/imported/haybale.obj-5559bcffd57acde62a4865d5a8f8613e.mesh", "res://.godot/imported/haybale.obj-5559bcffd57acde62a4865d5a8f8613e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

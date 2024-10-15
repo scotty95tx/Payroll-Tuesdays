@@ -9,7 +9,7 @@ var model : String = "gpt-3.5-turbo"
 var messages = []
 var request : HTTPRequest
 
-@onready var dialogue_box = get_node("/root/World/CanvasLayer/DialogueBox")
+@onready var dialogue_box = get_node("/root/World/CanvasLayer/Control/DialogueBox")
 var current_npc
 var timecards_submitted = 0
 @export_multiline var dialogue_rules : String
@@ -28,10 +28,13 @@ func dialogue_request(player_dialogue):
 	var prompt = player_dialogue
 	
 	if len(messages) == 0:
-		var header_prompt = "Act as a " + current_npc.physical_description + " in a huanted neighborhood filled wiht foremen. "
+		var header_prompt = "Act as a " + current_npc.physical_description + " in a huanted neighborhood filled with foremen."
 		header_prompt += "As a character, you are " + current_npc.personality + ". "
 		header_prompt += "Your location is " + current_npc.location_description + ". "
-		header_prompt += "You have secret knowledge that you will not speak about unless asked by me: " + current_npc.secret_knowledge + ". "
+		if current_npc.password_guessed:
+			header_prompt += "Tell the player you have already submitted your time card and that you are ready to go to bed. Put this in your own words and stay in character."
+		else:
+			header_prompt += "You need to get logged into HCSS Field, so that you can send your time card, but you are nervous because of the evil skeletons that are haunting your neighborhood. Act like you don't know your password, but give the player hints to what it may be. Your password is  " + current_npc.secret_knowledge
 		
 		prompt = dialogue_rules + "\n" + header_prompt + "\n What do you want to say first?"
 	
@@ -79,6 +82,7 @@ func enter_new_dialogue (npc):
 func exit_dialogue ():
 	current_npc = null
 	messages = []
+	print(messages)
 	dialogue_box.visible = false
 
 func is_dialogue_active ():

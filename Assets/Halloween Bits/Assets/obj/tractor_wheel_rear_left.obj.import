@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dho03844skn4l"
+path="res://.godot/imported/tractor_wheel_rear_left.obj-12ab44a49b8dd606414420907c334f2c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tractor_wheel_rear_left.obj-12ab44a49b8dd606414420907c334f2c.mesh"]
+
+source_file="res://Assets/Halloween Bits/Assets/obj/tractor_wheel_rear_left.obj"
+dest_files=["res://.godot/imported/tractor_wheel_rear_left.obj-12ab44a49b8dd606414420907c334f2c.mesh", "res://.godot/imported/tractor_wheel_rear_left.obj-12ab44a49b8dd606414420907c334f2c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -5,14 +5,16 @@ extends CharacterBody3D
 @onready var is_dialogue_active = false
 @onready var blaster_anim = $Visuals/Barbarian/Rig/Skeleton3D/Blaster/AnimationPlayer
 @onready var blaster_barrel = $Visuals/Barbarian/Rig/Skeleton3D/Blaster/RayCast3D
+@onready var health_bar = $"../CanvasLayer/Health/HealthBar"
 
 const SPEED = 1.2
 const HIT_STAGGER = 8.0
+var hp = 20.0
 
 var ray = load("res://Scenes/ray.tscn")
 var instance
 
-@export var JUMP_VELOCITY = 2.5
+@export var JUMP_VELOCITY = 0
 
 @export var sens_horizontal = 0.5
 @export var sens_vertical = 0.5
@@ -20,6 +22,7 @@ var instance
 signal player_hit
 
 func _ready():
+	health_bar.value = hp
 	add_to_group("Player")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
@@ -66,5 +69,8 @@ func _physics_process(delta: float) -> void:
 		animation_player.current_animation = "Idle"
 
 func hit(dir):
+	hp -= 1
+	health_bar.value = hp
+	if hp == 0:
+		pass
 	emit_signal("player_hit")
-	velocity += dir * HIT_STAGGER

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://soy4m3hfibas"
+path="res://.godot/imported/bush_C.obj-7f2d494231747411e19ebb9f8eeb2836.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bush_C.obj-7f2d494231747411e19ebb9f8eeb2836.mesh"]
+
+source_file="res://Assets/City Builder Bits/Assets/obj/bush_C.obj"
+dest_files=["res://.godot/imported/bush_C.obj-7f2d494231747411e19ebb9f8eeb2836.mesh", "res://.godot/imported/bush_C.obj-7f2d494231747411e19ebb9f8eeb2836.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

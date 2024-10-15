@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c65gc0wina37h"
+path="res://.godot/imported/candy_pink_B.obj-6d09ee7acf7deb58ba219d5df3ce35ee.mesh"
+
+[deps]
+
+files=["res://.godot/imported/candy_pink_B.obj-6d09ee7acf7deb58ba219d5df3ce35ee.mesh"]
+
+source_file="res://Assets/Halloween Bits/Assets/obj/candy_pink_B.obj"
+dest_files=["res://.godot/imported/candy_pink_B.obj-6d09ee7acf7deb58ba219d5df3ce35ee.mesh", "res://.godot/imported/candy_pink_B.obj-6d09ee7acf7deb58ba219d5df3ce35ee.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

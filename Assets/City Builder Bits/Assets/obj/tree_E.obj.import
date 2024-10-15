@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://7a5l820lcx1t"
+path="res://.godot/imported/tree_E.obj-86c380b06a610eb83de36d1042f43edb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree_E.obj-86c380b06a610eb83de36d1042f43edb.mesh"]
+
+source_file="res://Assets/City Builder Bits/Assets/obj/tree_E.obj"
+dest_files=["res://.godot/imported/tree_E.obj-86c380b06a610eb83de36d1042f43edb.mesh", "res://.godot/imported/tree_E.obj-86c380b06a610eb83de36d1042f43edb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

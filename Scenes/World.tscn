@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c680qw5fwx4b3"]
+[gd_scene load_steps=16 format=3 uid="uid://c680qw5fwx4b3"]
 
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_5qy3w"]
 [ext_resource type="PackedScene" uid="uid://dcmnop4gd1h2h" path="res://Scenes/player.tscn" id="2_1ncq1"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" path="res://Scripts/dialogue_box.gd" id="4_13dyx"]
 [ext_resource type="PackedScene" uid="uid://qjs4x1xjx28b" path="res://Scenes/Neighborhood.tscn" id="4_bewa4"]
 [ext_resource type="Script" path="res://Scripts/timecards_submitted.gd" id="5_svymx"]
+[ext_resource type="Script" path="res://Scripts/ring_trigger.gd" id="5_u76xv"]
+[ext_resource type="Script" path="res://Scenes/rings_left.gd" id="7_5nm1i"]
+[ext_resource type="FontFile" uid="uid://o3fx5klu65mf" path="res://Scenes/CustomAssetts/NewHiScore.ttf" id="9_5vsyg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hehmt"]
 sky_top_color = Color(0.0936, 0.2046, 0.36, 1)
@@ -19,11 +22,26 @@ background_mode = 2
 background_energy_multiplier = 0.1
 sky = SubResource("Sky_obmg8")
 glow_enabled = true
-fog_light_energy = 1.69
-fog_density = 0.08
+fog_enabled = true
+fog_light_color = Color(0.115829, 0.391675, 0.343181, 1)
+fog_light_energy = 0.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_23772"]
+size = Vector3(1.1709, 1.09448, 0.861328)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8t5w"]
+bg_color = Color(0.10748, 0.10748, 0.10748, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7n8eh"]
+bg_color = Color(1, 0.199623, 0.250611, 1)
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_5qy3w")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.555541, 0.831489, 0, -0.831489, 0.555541, 0, 6.84113, 0)
+light_color = Color(0.0708451, 0.105226, 0.244318, 1)
+light_energy = 0.304
 
 [node name="Neighborhood" parent="." instance=ExtResource("4_bewa4")]
 
@@ -33,96 +51,261 @@ environment = SubResource("Environment_13nmy")
 [node name="Player" parent="." instance=ExtResource("2_1ncq1")]
 transform = Transform3D(0.157094, 0, 0, 0, 0.157094, 0, 0, 0, 0.157094, -1.1209, -0.0710871, 1.05894)
 
+[node name="Area3D" type="Area3D" parent="Player"]
+transform = Transform3D(0.684568, 0, 27.7747, 0, 62.8505, 0, -24.1009, 0, 0.788917, 0.16866, 0.150905, -0.601382)
+script = ExtResource("5_u76xv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Area3D" groups=["NPC"]]
+transform = Transform3D(0.01, 0, 4.17177e-19, 0, 0.01, 0, -4.17177e-19, 0, 0.01, -0.00504223, 0.000433419, -0.000391931)
+shape = SubResource("BoxShape3D_23772")
+
 [node name="GameManager" type="Node3D" parent="."]
 script = ExtResource("3_a1ybi")
 dialogue_rules = "You are a character in a videogame rpg. Reply to my questions and never break character. Don't mention that you are an AI or that this is a game. Only repond with your dialogue text and nothing else, but you can imply actions with square brackets.  For example [crying]"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="DialogueBox" type="Panel" parent="CanvasLayer"]
-visible = false
-offset_left = 320.0
-offset_top = 96.0
-offset_right = 912.0
-offset_bottom = 328.0
-script = ExtResource("4_13dyx")
-metadata/_edit_use_anchors_ = true
+[node name="RichTextLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.009
+anchor_top = 0.838
+anchor_right = 0.495
+anchor_bottom = 0.914
+offset_left = -0.368001
+offset_top = -0.0240479
+offset_right = -0.240051
+offset_bottom = -0.272034
+theme_override_fonts/font = ExtResource("9_5vsyg")
+theme_override_font_sizes/font_size = 40
+text = "Time cards Submitted: 0 of 7"
+script = ExtResource("5_svymx")
 
-[node name="DialogueText" type="RichTextLabel" parent="CanvasLayer/DialogueBox"]
+[node name="NoRingsLeft" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_left = 360.0
+offset_top = 296.0
+offset_right = 827.0
+offset_bottom = 361.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/NoRingsLeft"]
+visible = false
 layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -418.0
+offset_top = 17.0
+offset_right = -52.0
+offset_bottom = 47.0
+text = "No doorbell rings left for this foreman's house"
+
+[node name="Health" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_top = 0.877
+anchor_right = 0.516
+anchor_bottom = 1.0
+offset_top = -0.296021
+offset_right = 0.567993
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/Health"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.263
+anchor_top = 0.34
+anchor_right = 0.965
+anchor_bottom = 0.777
+offset_left = 0.0469971
+offset_top = 0.039999
+offset_right = 0.0849609
+offset_bottom = -0.038002
+theme_override_styles/background = SubResource("StyleBoxFlat_i8t5w")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7n8eh")
+max_value = 20.0
+value = 10.0
+show_percentage = false
+
+[node name="HealthText" type="Label" parent="CanvasLayer/Health"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021
+anchor_top = 0.33
+anchor_right = 0.396
+anchor_bottom = 0.947
+offset_left = -0.251001
+offset_top = -0.0200005
+offset_right = 0.123978
+offset_bottom = -0.0180054
+theme_override_fonts/font = ExtResource("9_5vsyg")
+theme_override_font_sizes/font_size = 40
+text = "Health"
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogueBox" type="Panel" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27
+anchor_top = 0.168
+anchor_right = 0.784
+anchor_bottom = 0.526
+offset_left = -0.0400085
+offset_top = 0.135994
+offset_right = -0.16803
+offset_bottom = 0.151978
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_13dyx")
+
+[node name="DialogueText" type="RichTextLabel" parent="CanvasLayer/Control/DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00168919
+anchor_top = 0.0603448
+anchor_right = 0.998311
+anchor_bottom = 0.849138
 offset_left = 24.0
 offset_top = 24.0
 offset_right = -16.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Testing TestingTestingTestingTestingTestingTestingTestingTesting"
 metadata/_edit_use_anchors_ = true
 
-[node name="PlayerTextInput" type="TextEdit" parent="CanvasLayer/DialogueBox"]
+[node name="PlayerTextInput" type="TextEdit" parent="CanvasLayer/Control/DialogueBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.96
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 32.0
-offset_top = -40.0
-offset_right = -232.0
-offset_bottom = -8.0
-placeholder_text = "Type your guess"
+anchor_left = 0.054
+anchor_top = 0.788
+anchor_right = 0.608
+anchor_bottom = 0.966
+offset_left = 0.0319996
+offset_top = -0.0960083
+offset_right = 0.0639648
+offset_bottom = -0.112
+placeholder_text = "...help the foreman log in"
 metadata/_edit_use_anchors_ = true
 
-[node name="Talk" type="Button" parent="CanvasLayer/DialogueBox"]
+[node name="Talk" type="Button" parent="CanvasLayer/Control/DialogueBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.042
-anchor_top = 0.96
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 343.136
-offset_top = -38.72
-offset_right = -126.0
-offset_bottom = -9.0
-text = "Guess"
+anchor_left = 0.622
+anchor_top = 0.793
+anchor_right = 0.787
+anchor_bottom = 0.961
+offset_left = -0.22403
+offset_top = 0.0239868
+offset_right = 0.0959778
+offset_bottom = 0.0479889
+text = "Talk"
 metadata/_edit_use_anchors_ = true
 
-[node name="Leave" type="Button" parent="CanvasLayer/DialogueBox"]
+[node name="Leave" type="Button" parent="CanvasLayer/Control/DialogueBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.014
-anchor_top = 0.96
-anchor_right = 1.0
-anchor_bottom = 0.96
-offset_left = 463.712
-offset_top = -38.72
-offset_right = -16.0
-offset_bottom = 0.279999
+anchor_left = 0.797
+anchor_top = 0.793
+anchor_right = 0.973
+anchor_bottom = 0.961
+offset_left = 0.175964
+offset_top = 0.0239868
+offset_right = -0.0160522
+offset_bottom = 0.0479889
 text = "Leave"
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-offset_right = 257.0
-offset_bottom = 55.0
-text = "Time cards Submitted: 0 of 7"
-script = ExtResource("5_svymx")
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.351
+anchor_top = 0.013
+anchor_right = 0.785
+anchor_bottom = 0.25
+offset_left = 0.207993
+offset_top = -0.016
+offset_right = 0.279999
+text = "Doorbell Rings Left : 2"
+script = ExtResource("7_5nm1i")
 
 [node name="PlayerHitUI" type="Control" parent="."]
+visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="PlayerHitUI"]
 visible = false
-layout_mode = 0
-offset_right = 1154.0
-offset_bottom = 645.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.898039, 0, 0.0627451, 0.121569)
 
+[node name="SkeletonSpawnTimer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="PauseMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchor_right = 0.998
+anchor_bottom = 1.002
+offset_right = 0.303955
+offset_bottom = -0.296082
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 464.0
+offset_right = -721.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Resume" type="Button" parent="PauseMenu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Restart" type="Button" parent="PauseMenu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="Quit" type="Button" parent="PauseMenu/PanelContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+text = "Quit
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PauseMenu"]
+
 [connection signal="player_hit" from="Player" to="." method="_on_player_player_hit"]
-[connection signal="pressed" from="CanvasLayer/DialogueBox/Talk" to="Player" method="_on_talk_pressed"]
-[connection signal="pressed" from="CanvasLayer/DialogueBox/Talk" to="CanvasLayer/DialogueBox" method="_on_talk_pressed"]
-[connection signal="pressed" from="CanvasLayer/DialogueBox/Leave" to="CanvasLayer/DialogueBox" method="_on_leave_pressed"]
+[connection signal="body_entered" from="Player/Area3D" to="Player/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Player/Area3D" to="Player/Area3D" method="_on_body_exited"]
+[connection signal="pressed" from="CanvasLayer/Control/DialogueBox/Talk" to="Player" method="_on_talk_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/DialogueBox/Talk" to="CanvasLayer/Control/DialogueBox" method="_on_talk_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/DialogueBox/Leave" to="CanvasLayer/Control/DialogueBox" method="_on_leave_pressed"]
+[connection signal="timeout" from="SkeletonSpawnTimer" to="." method="_on_skeleton_spawn_timer_timeout"]

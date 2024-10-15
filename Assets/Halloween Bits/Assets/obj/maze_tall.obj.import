@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cogoc76vqcr7m"
+path="res://.godot/imported/maze_tall.obj-adad78e4021ac736c2c73411d66741bb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/maze_tall.obj-adad78e4021ac736c2c73411d66741bb.mesh"]
+
+source_file="res://Assets/Halloween Bits/Assets/obj/maze_tall.obj"
+dest_files=["res://.godot/imported/maze_tall.obj-adad78e4021ac736c2c73411d66741bb.mesh", "res://.godot/imported/maze_tall.obj-adad78e4021ac736c2c73411d66741bb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

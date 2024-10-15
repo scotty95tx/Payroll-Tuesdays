@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dysduc2182aox"
+path="res://.godot/imported/tractor.obj-d0ea51f6791270ea25f40f8d8bb0ae98.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tractor.obj-d0ea51f6791270ea25f40f8d8bb0ae98.mesh"]
+
+source_file="res://Assets/Halloween Bits/Assets/obj/tractor.obj"
+dest_files=["res://.godot/imported/tractor.obj-d0ea51f6791270ea25f40f8d8bb0ae98.mesh", "res://.godot/imported/tractor.obj-d0ea51f6791270ea25f40f8d8bb0ae98.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cq2tpcqp75o6p"
+path="res://.godot/imported/park_base_decorated_trees.obj-5e31bc9377b4cd4017ecd36ee0d4205d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/park_base_decorated_trees.obj-5e31bc9377b4cd4017ecd36ee0d4205d.mesh"]
+
+source_file="res://Assets/City Builder Bits/Assets/obj/park_base_decorated_trees.obj"
+dest_files=["res://.godot/imported/park_base_decorated_trees.obj-5e31bc9377b4cd4017ecd36ee0d4205d.mesh", "res://.godot/imported/park_base_decorated_trees.obj-5e31bc9377b4cd4017ecd36ee0d4205d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

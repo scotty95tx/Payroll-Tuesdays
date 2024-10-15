@@ -25,6 +25,11 @@ func _on_talk_pressed() -> void:
 		game_manager.dialogue_request(talk_input.text)
 	elif game_manager.current_npc.password_guessed == true:
 		game_manager.dialogue_request("Tell the player you have already submitted your time card and that you are ready to go to bed. Put this in your own words and stay in character.")
+	elif talk_input.text == game_manager.current_npc.password:
+		game_manager.timecards_submitted += 1
+		score_node.update_score()
+		game_manager.current_npc.password_guessed = true
+		game_manager.dialogue_request("Celebrate and tell the player that you have sent your time card in and ready to get inside and away from the haunted skeletons. Stay in character.")
 	else :
 		game_manager.timecards_submitted += 1
 		score_node.update_score()
@@ -33,6 +38,7 @@ func _on_talk_pressed() -> void:
 
 
 func _on_leave_pressed() -> void:
+	print("dialogue_exited")
 	game_manager.exit_dialogue()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	player_node.is_dialogue_active = false

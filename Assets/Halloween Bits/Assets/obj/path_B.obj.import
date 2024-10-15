@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dws8mx3qyt4fc"
+path="res://.godot/imported/path_B.obj-4dadc746a92fc791ce2c079d64a4a52b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/path_B.obj-4dadc746a92fc791ce2c079d64a4a52b.mesh"]
+
+source_file="res://Assets/Halloween Bits/Assets/obj/path_B.obj"
+dest_files=["res://.godot/imported/path_B.obj-4dadc746a92fc791ce2c079d64a4a52b.mesh", "res://.godot/imported/path_B.obj-4dadc746a92fc791ce2c079d64a4a52b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

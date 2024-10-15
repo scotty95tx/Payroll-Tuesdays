@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dylr0fyhq4uyj"
+path="res://.godot/imported/candy_bucket_B_decorated.obj-4cc53445de27a9e796d7e020a554799c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/candy_bucket_B_decorated.obj-4cc53445de27a9e796d7e020a554799c.mesh"]
+
+source_file="res://Assets/Halloween Bits/Assets/obj/candy_bucket_B_decorated.obj"
+dest_files=["res://.godot/imported/candy_bucket_B_decorated.obj-4cc53445de27a9e796d7e020a554799c.mesh", "res://.godot/imported/candy_bucket_B_decorated.obj-4cc53445de27a9e796d7e020a554799c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

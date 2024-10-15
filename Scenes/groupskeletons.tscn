@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3jjdkov4u1ln"]
+
+[ext_resource type="PackedScene" uid="uid://c81bicojql0x6" path="res://Scenes/skeleton_warrior_fixed.tscn" id="1_j4boj"]
+
+[node name="Skeletons" type="Node3D"]
+
+[node name="Skeleton_Warrior2" parent="." instance=ExtResource("1_j4boj")]
+transform = Transform3D(0.651617, 0, 0, 0, 0.651617, 0, 0, 0, 0.651617, -0.265435, 0, -0.708897)
+
+[node name="Skeleton_Warrior5" parent="." instance=ExtResource("1_j4boj")]
+transform = Transform3D(0.651617, 0, 0, 0, 0.651617, 0, 0, 0, 0.651617, -0.265435, 0, -0.0724018)
+
+[node name="Skeleton_Warrior3" parent="." instance=ExtResource("1_j4boj")]
+transform = Transform3D(0.651617, 0, 0, 0, 0.651617, 0, 0, 0, 0.651617, -0.272428, 0, 0.580378)
+
+[node name="Skeleton_Warrior4" parent="." instance=ExtResource("1_j4boj")]
+transform = Transform3D(0.651617, 0, 0, 0, 0.651617, 0, 0, 0, 0.651617, 0.600163, 0, 0.169484)

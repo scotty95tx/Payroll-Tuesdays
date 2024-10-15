@@ -3,10 +3,10 @@ extends CharacterBody3D
 var player = null
 
 const SPEED = 1.0
-const ATTACK_RANGE = .5
-var health = 6
+const ATTACK_RANGE = .6
+var health = 4
 
-@export var player_path : NodePath
+@export var player_path := "/root/World/Player"
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var anim_tree = $AnimationTree
@@ -36,9 +36,6 @@ func _hit_finished():
 		player.hit(dir)
 
 func _on_area_3d_body_part_hit(dam: Variant) -> void:
-	print("skele hit")
 	health -= dam
 	if health <= 0:
-		anim_tree.set("parameters/conditions/die", true)
-		await get_tree().create_timer(4.0).timeout
 		queue_free()

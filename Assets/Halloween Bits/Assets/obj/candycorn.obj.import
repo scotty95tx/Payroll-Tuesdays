@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c3u3ffj0j0rqp"
+path="res://.godot/imported/candycorn.obj-6a0e88d71172820900662c882309e61f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/candycorn.obj-6a0e88d71172820900662c882309e61f.mesh"]
+
+source_file="res://Assets/Halloween Bits/Assets/obj/candycorn.obj"
+dest_files=["res://.godot/imported/candycorn.obj-6a0e88d71172820900662c882309e61f.mesh", "res://.godot/imported/candycorn.obj-6a0e88d71172820900662c882309e61f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

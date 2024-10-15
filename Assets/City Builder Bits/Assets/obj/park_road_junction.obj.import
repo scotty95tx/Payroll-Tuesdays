@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c5v58fyhduusv"
+path="res://.godot/imported/park_road_junction.obj-5298619b522a11d251bafb4e07e54115.mesh"
+
+[deps]
+
+files=["res://.godot/imported/park_road_junction.obj-5298619b522a11d251bafb4e07e54115.mesh"]
+
+source_file="res://Assets/City Builder Bits/Assets/obj/park_road_junction.obj"
+dest_files=["res://.godot/imported/park_road_junction.obj-5298619b522a11d251bafb4e07e54115.mesh", "res://.godot/imported/park_road_junction.obj-5298619b522a11d251bafb4e07e54115.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

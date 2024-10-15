@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://vspun4uaagtx"
+path="res://.godot/imported/park_base_decorated_bushes.obj-bbf5516086df7500c2cd80fa1e814fac.mesh"
+
+[deps]
+
+files=["res://.godot/imported/park_base_decorated_bushes.obj-bbf5516086df7500c2cd80fa1e814fac.mesh"]
+
+source_file="res://Assets/City Builder Bits/Assets/obj/park_base_decorated_bushes.obj"
+dest_files=["res://.godot/imported/park_base_decorated_bushes.obj-bbf5516086df7500c2cd80fa1e814fac.mesh", "res://.godot/imported/park_base_decorated_bushes.obj-bbf5516086df7500c2cd80fa1e814fac.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dhwvo0hhk5egu"
+path="res://.godot/imported/lollipop_pink.obj-d21a8bfab5094cb31908e2823d08bba4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/lollipop_pink.obj-d21a8bfab5094cb31908e2823d08bba4.mesh"]
+
+source_file="res://Assets/Halloween Bits/Assets/obj/lollipop_pink.obj"
+dest_files=["res://.godot/imported/lollipop_pink.obj-d21a8bfab5094cb31908e2823d08bba4.mesh", "res://.godot/imported/lollipop_pink.obj-d21a8bfab5094cb31908e2823d08bba4.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
