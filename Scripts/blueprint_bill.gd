@@ -5,6 +5,7 @@ extends CharacterBody3D
 @export_multiline var location_description : String
 @export_multiline var personality : String
 @export_multiline var secret_knowledge : String
-@export var password : String = "cheesepuffs"
+@export var password : String = "internet"
 @export var foreman_name : String = "Blueprint Bill"
 var password_guessed : bool = false
+var rings_left = 3

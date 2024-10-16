@@ -6,6 +6,11 @@ extends CharacterBody3D
 @onready var blaster_anim = $Visuals/Barbarian/Rig/Skeleton3D/Blaster/AnimationPlayer
 @onready var blaster_barrel = $Visuals/Barbarian/Rig/Skeleton3D/Blaster/RayCast3D
 @onready var health_bar = $"../CanvasLayer/Health/HealthBar"
+@onready var game_over_node = get_node("/root/World/Gameover")
+@onready var game_over_node_rings = get_node("/root/World/GameoverRings")
+@onready var player = $"."
+@onready var control_node = get_node("/root/World/CanvasLayer/Control")
+@onready var blast = $Blast
 
 const SPEED = 1.2
 const HIT_STAGGER = 8.0
@@ -71,6 +76,10 @@ func _physics_process(delta: float) -> void:
 func hit(dir):
 	hp -= 1
 	health_bar.value = hp
-	if hp == 0:
-		pass
+	if hp == 0 and game_over_node_rings.visible == false:
+		player.visible = false
+		player.is_dialogue_active = true
+		control_node.visible = false
+		game_over_node.visible = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	emit_signal("player_hit")

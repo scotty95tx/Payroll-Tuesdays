@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://jnmnkwb5m8qv"]
 
-[ext_resource type="PackedScene" uid="uid://brvfodbccr2en" path="res://Assets/KayKit_Adventurers_1.0_EXTRA/Assets/fbx/shotgun.fbx" id="1_lyjp7"]
+[ext_resource type="PackedScene" uid="uid://brvfodbccr2en" path="res://Assets/Character_Assets/Assets/fbx/shotgun.fbx" id="1_lyjp7"]
 
 [sub_resource type="Animation" id="Animation_dm0g5"]
 length = 0.001

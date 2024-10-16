@@ -1,14 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://c680qw5fwx4b3"]
+[gd_scene load_steps=19 format=3 uid="uid://c680qw5fwx4b3"]
 
-[ext_resource type="Script" path="res://Scenes/world.gd" id="1_5qy3w"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_5qy3w"]
 [ext_resource type="PackedScene" uid="uid://dcmnop4gd1h2h" path="res://Scenes/player.tscn" id="2_1ncq1"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="3_a1ybi"]
 [ext_resource type="Script" path="res://Scripts/dialogue_box.gd" id="4_13dyx"]
 [ext_resource type="PackedScene" uid="uid://qjs4x1xjx28b" path="res://Scenes/Neighborhood.tscn" id="4_bewa4"]
+[ext_resource type="AudioStream" uid="uid://vibipuupvb" path="res://audio/doorbell.mp3" id="5_sr8g7"]
 [ext_resource type="Script" path="res://Scripts/timecards_submitted.gd" id="5_svymx"]
 [ext_resource type="Script" path="res://Scripts/ring_trigger.gd" id="5_u76xv"]
-[ext_resource type="Script" path="res://Scenes/rings_left.gd" id="7_5nm1i"]
-[ext_resource type="FontFile" uid="uid://o3fx5klu65mf" path="res://Scenes/CustomAssetts/NewHiScore.ttf" id="9_5vsyg"]
+[ext_resource type="Script" path="res://Scripts/rings_left.gd" id="7_5nm1i"]
+[ext_resource type="AudioStream" uid="uid://d26adki73s24h" path="res://audio/wrong-place.mp3" id="7_umdsw"]
+[ext_resource type="FontFile" uid="uid://o3fx5klu65mf" path="res://Assets/CustomAssets/NewHiScore.ttf" id="9_5vsyg"]
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="10_yd05x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hehmt"]
 sky_top_color = Color(0.0936, 0.2046, 0.36, 1)
@@ -22,7 +25,6 @@ background_mode = 2
 background_energy_multiplier = 0.1
 sky = SubResource("Sky_obmg8")
 glow_enabled = true
-fog_enabled = true
 fog_light_color = Color(0.115829, 0.391675, 0.343181, 1)
 fog_light_energy = 0.4
 
@@ -59,9 +61,304 @@ script = ExtResource("5_u76xv")
 transform = Transform3D(0.01, 0, 4.17177e-19, 0, 0.01, 0, -4.17177e-19, 0, 0.01, -0.00504223, 0.000433419, -0.000391931)
 shape = SubResource("BoxShape3D_23772")
 
+[node name="DoorbellRing" type="AudioStreamPlayer3D" parent="Player/Area3D"]
+stream = ExtResource("5_sr8g7")
+volume_db = -23.802
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player"]
+stream = ExtResource("7_umdsw")
+volume_db = -47.603
+autoplay = true
+
 [node name="GameManager" type="Node3D" parent="."]
 script = ExtResource("3_a1ybi")
 dialogue_rules = "You are a character in a videogame rpg. Reply to my questions and never break character. Don't mention that you are an AI or that this is a game. Only repond with your dialogue text and nothing else, but you can imply actions with square brackets.  For example [crying]"
+
+[node name="Gameover" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchor_left = 0.363
+anchor_top = 0.236
+anchor_right = 0.635
+anchor_bottom = 0.752
+offset_left = -0.175995
+offset_top = 0.071991
+offset_right = -0.520081
+offset_bottom = -0.296021
+script = ExtResource("10_yd05x")
+
+[node name="PanelContainer" type="PanelContainer" parent="Gameover"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Gameover/PanelContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Restart" type="Button" parent="Gameover/PanelContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Restart"
+
+[node name="Quit" type="Button" parent="Gameover/PanelContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Quit
+"
+
+[node name="Gamover" type="PanelContainer" parent="Gameover"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.099
+anchor_top = -0.374
+anchor_right = 1.093
+anchor_bottom = -0.033
+offset_left = -0.0129986
+offset_top = -0.083992
+offset_right = -0.109009
+offset_bottom = 0.0220003
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Gameover/Gamover"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Gameover/Gamover/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_5vsyg")
+theme_override_font_sizes/font_size = 30
+text = "The Skeletons have 
+defeated you!"
+horizontal_alignment = 1
+
+[node name="PauseMenubad" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchor_left = 0.363
+anchor_top = 0.236
+anchor_right = 0.635
+anchor_bottom = 0.752
+offset_left = -0.175995
+offset_top = 0.071991
+offset_right = -0.520081
+offset_bottom = -0.296021
+script = ExtResource("10_yd05x")
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenubad"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenubad/PanelContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Resume" type="Button" parent="PauseMenubad/PanelContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Resume"
+
+[node name="Restart" type="Button" parent="PauseMenubad/PanelContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Restart"
+
+[node name="Quit" type="Button" parent="PauseMenubad/PanelContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Quit
+"
+
+[node name="PanelContainer2" type="PanelContainer" parent="PauseMenubad"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.099
+anchor_top = -0.374
+anchor_right = 1.093
+anchor_bottom = -0.033
+offset_left = -0.0129986
+offset_top = -0.083992
+offset_right = -0.109009
+offset_bottom = 0.0220003
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenubad/PanelContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PauseMenubad/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_5vsyg")
+theme_override_font_sizes/font_size = 30
+text = "Controls"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PauseMenubad/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_5vsyg")
+theme_override_font_sizes/font_size = 25
+text = "WASD to move"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="PauseMenubad/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_5vsyg")
+theme_override_font_sizes/font_size = 25
+text = "Left-Click to fire lazer"
+horizontal_alignment = 1
+
+[node name="GameoverRings" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchor_left = 0.363
+anchor_top = 0.236
+anchor_right = 0.635
+anchor_bottom = 0.752
+offset_left = -0.175995
+offset_top = 0.071991
+offset_right = -0.520081
+offset_bottom = -0.296021
+script = ExtResource("10_yd05x")
+
+[node name="PanelContainer" type="PanelContainer" parent="GameoverRings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameoverRings/PanelContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Restart" type="Button" parent="GameoverRings/PanelContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Restart"
+
+[node name="Quit" type="Button" parent="GameoverRings/PanelContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Quit
+"
+
+[node name="Gamover" type="PanelContainer" parent="GameoverRings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.099
+anchor_top = -0.374
+anchor_right = 1.093
+anchor_bottom = -0.033
+offset_left = -0.0129986
+offset_top = -0.083992
+offset_right = -0.109009
+offset_bottom = 0.0220003
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameoverRings/Gamover"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="GameoverRings/Gamover/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_5vsyg")
+theme_override_font_sizes/font_size = 30
+text = "You ran out of 
+doorbell rings
+for one of the foremen!"
+horizontal_alignment = 1
+
+[node name="WinningScreen" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchor_left = 0.363
+anchor_top = 0.236
+anchor_right = 0.635
+anchor_bottom = 0.752
+offset_left = -0.175995
+offset_top = 0.071991
+offset_right = -0.520081
+offset_bottom = -0.296021
+script = ExtResource("10_yd05x")
+
+[node name="PanelContainer" type="PanelContainer" parent="WinningScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinningScreen/PanelContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Restart" type="Button" parent="WinningScreen/PanelContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Restart"
+
+[node name="Quit" type="Button" parent="WinningScreen/PanelContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Quit
+"
+
+[node name="Win" type="PanelContainer" parent="WinningScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.099
+anchor_top = -0.374
+anchor_right = 1.093
+anchor_bottom = -0.033
+offset_left = -0.0129986
+offset_top = -0.083992
+offset_right = -0.109009
+offset_bottom = 0.0220003
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinningScreen/Win"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="WinningScreen/Win/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_5vsyg")
+theme_override_font_sizes/font_size = 30
+text = "Congrats! All the
+foreman submitted
+their time!"
+horizontal_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -129,12 +426,12 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.021
 anchor_top = 0.33
-anchor_right = 0.396
-anchor_bottom = 0.947
+anchor_right = 0.252
+anchor_bottom = 0.775
 offset_left = -0.251001
 offset_top = -0.0200005
-offset_right = 0.123978
-offset_bottom = -0.0180054
+offset_right = 85.804
+offset_bottom = 13.742
 theme_override_fonts/font = ExtResource("9_5vsyg")
 theme_override_font_sizes/font_size = 40
 text = "Health"
@@ -151,14 +448,14 @@ grow_vertical = 2
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.27
-anchor_top = 0.168
+anchor_left = 0.254
+anchor_top = 0.042
 anchor_right = 0.784
-anchor_bottom = 0.526
-offset_left = -0.0400085
-offset_top = 0.135994
+anchor_bottom = 0.372
+offset_left = 0.391998
+offset_top = -0.216002
 offset_right = -0.16803
-offset_bottom = 0.151978
+offset_bottom = -0.0559998
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_13dyx")
@@ -189,7 +486,7 @@ offset_left = 0.0319996
 offset_top = -0.0960083
 offset_right = 0.0639648
 offset_bottom = -0.112
-placeholder_text = "...help the foreman log in"
+placeholder_text = "Guess foreman's password (you can ask them for hints)"
 metadata/_edit_use_anchors_ = true
 
 [node name="Talk" type="Button" parent="CanvasLayer/Control/DialogueBox"]
@@ -253,26 +550,48 @@ grow_vertical = 2
 color = Color(0.898039, 0, 0.0627451, 0.121569)
 
 [node name="SkeletonSpawnTimer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 45.0
 autostart = true
 
-[node name="PauseMenu" type="Control" parent="."]
+[node name="RingDoorbell" type="Control" parent="."]
 visible = false
 layout_mode = 3
-anchor_right = 0.998
-anchor_bottom = 1.002
-offset_right = 0.303955
-offset_bottom = -0.296082
+anchors_preset = 0
+offset_left = 656.0
+offset_top = 319.0
+offset_right = 1046.0
+offset_bottom = 407.0
 
-[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+[node name="PanelContainer" type="PanelContainer" parent="RingDoorbell"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.568
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 464.0
-offset_right = -721.0
+offset_left = -4.0
+offset_top = 0.0159988
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="RingDoorbell/PanelContainer"]
+layout_mode = 2
+text = "Press F to Ring Doorbell"
+horizontal_alignment = 1
+
+[node name="PauseMenu" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchor_left = 0.363
+anchor_top = 0.236
+anchor_right = 0.635
+anchor_bottom = 0.752
+offset_left = -0.175995
+offset_top = 0.071991
+offset_right = -0.520081
+offset_bottom = -0.296021
+script = ExtResource("10_yd05x")
 
 [node name="PanelContainer" type="PanelContainer" parent="PauseMenu"]
 layout_mode = 1
@@ -283,29 +602,76 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/PanelContainer"]
+process_mode = 3
 layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Resume" type="Button" parent="PauseMenu/PanelContainer/VBoxContainer"]
-layout_mode = 2
-text = "Resume"
+theme_override_constants/separation = 50
+alignment = 1
 
 [node name="Restart" type="Button" parent="PauseMenu/PanelContainer/VBoxContainer"]
+process_mode = 3
 layout_mode = 2
+size_flags_horizontal = 4
 text = "Restart"
 
 [node name="Quit" type="Button" parent="PauseMenu/PanelContainer/VBoxContainer"]
 process_mode = 3
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "Quit
 "
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PauseMenu"]
+[node name="PanelContainer2" type="PanelContainer" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.099
+anchor_top = -0.374
+anchor_right = 1.093
+anchor_bottom = -0.033
+offset_left = -0.0129986
+offset_top = -0.083992
+offset_right = -0.109009
+offset_bottom = 0.0220003
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/PanelContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PauseMenu/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_5vsyg")
+theme_override_font_sizes/font_size = 30
+text = "Controls"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PauseMenu/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_5vsyg")
+theme_override_font_sizes/font_size = 25
+text = "WASD to move"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="PauseMenu/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_5vsyg")
+theme_override_font_sizes/font_size = 25
+text = "Left-Click to fire lazer"
+horizontal_alignment = 1
 
 [connection signal="player_hit" from="Player" to="." method="_on_player_player_hit"]
 [connection signal="body_entered" from="Player/Area3D" to="Player/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Player/Area3D" to="Player/Area3D" method="_on_body_exited"]
+[connection signal="pressed" from="Gameover/PanelContainer/VBoxContainer/Restart" to="Gameover" method="_on_restart_pressed"]
+[connection signal="pressed" from="Gameover/PanelContainer/VBoxContainer/Quit" to="Gameover" method="_on_quit_pressed"]
+[connection signal="pressed" from="PauseMenubad/PanelContainer/VBoxContainer/Restart" to="PauseMenubad" method="_on_restart_pressed"]
+[connection signal="pressed" from="PauseMenubad/PanelContainer/VBoxContainer/Quit" to="PauseMenubad" method="_on_quit_pressed"]
+[connection signal="pressed" from="GameoverRings/PanelContainer/VBoxContainer/Restart" to="GameoverRings" method="_on_restart_pressed"]
+[connection signal="pressed" from="GameoverRings/PanelContainer/VBoxContainer/Quit" to="GameoverRings" method="_on_quit_pressed"]
+[connection signal="pressed" from="WinningScreen/PanelContainer/VBoxContainer/Restart" to="WinningScreen" method="_on_restart_pressed"]
+[connection signal="pressed" from="WinningScreen/PanelContainer/VBoxContainer/Quit" to="WinningScreen" method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/DialogueBox/Talk" to="Player" method="_on_talk_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/DialogueBox/Talk" to="CanvasLayer/Control/DialogueBox" method="_on_talk_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/DialogueBox/Leave" to="CanvasLayer/Control/DialogueBox" method="_on_leave_pressed"]
 [connection signal="timeout" from="SkeletonSpawnTimer" to="." method="_on_skeleton_spawn_timer_timeout"]
+[connection signal="pressed" from="PauseMenu/PanelContainer/VBoxContainer/Restart" to="PauseMenu" method="_on_restart_pressed"]
+[connection signal="pressed" from="PauseMenu/PanelContainer/VBoxContainer/Quit" to="PauseMenu" method="_on_quit_pressed"]

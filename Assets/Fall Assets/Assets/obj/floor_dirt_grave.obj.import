@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c0n0mbxelw782"
+path="res://.godot/imported/floor_dirt_grave.obj-b53a15c9e9af1d5eb44cc7bbb827b46a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor_dirt_grave.obj-b53a15c9e9af1d5eb44cc7bbb827b46a.mesh"]
+
+source_file="res://Assets/Fall Assets/Assets/obj/floor_dirt_grave.obj"
+dest_files=["res://.godot/imported/floor_dirt_grave.obj-b53a15c9e9af1d5eb44cc7bbb827b46a.mesh", "res://.godot/imported/floor_dirt_grave.obj-b53a15c9e9af1d5eb44cc7bbb827b46a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

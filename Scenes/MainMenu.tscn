@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://ctreu6blhq1b7"]
 
-[ext_resource type="FontFile" uid="uid://o3fx5klu65mf" path="res://Scenes/CustomAssetts/NewHiScore.ttf" id="1_04jgf"]
-[ext_resource type="Texture2D" uid="uid://cierfk4y8pdic" path="res://Scenes/CustomAssetts/background-2.png" id="1_lfxnh"]
-[ext_resource type="Texture2D" uid="uid://ycfgmcjpbxbf" path="res://Assets/kenney_input-prompts/Nintendo Switch/Default/switch_right.png" id="2_t8sjs"]
-[ext_resource type="Script" path="res://Scenes/play_button.gd" id="4_ct7km"]
+[ext_resource type="FontFile" uid="uid://o3fx5klu65mf" path="res://Assets/CustomAssets/NewHiScore.ttf" id="1_04jgf"]
+[ext_resource type="Texture2D" uid="uid://cierfk4y8pdic" path="res://Assets/CustomAssets/background-2.png" id="1_lfxnh"]
+[ext_resource type="Texture2D" uid="uid://ycfgmcjpbxbf" path="res://Assets/switch_right.png" id="2_t8sjs"]
+[ext_resource type="Script" path="res://Scripts/play_button.gd" id="4_ct7km"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -53,5 +53,16 @@ alignment = 1
 layout_mode = 2
 texture_normal = ExtResource("2_t8sjs")
 script = ExtResource("4_ct7km")
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "The foremen's neighborhood has become haunted,
+ and even worse, payroll is due tomorrow! 
+Help the foremen remember their password, so they can log into HCSS Field and submit their time cards!"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/TextureButton" to="VBoxContainer/HBoxContainer/TextureButton" method="_on_pressed"]

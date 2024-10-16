@@ -28,7 +28,7 @@ func dialogue_request(player_dialogue):
 	var prompt = player_dialogue
 	
 	if len(messages) == 0:
-		var header_prompt = "Act as a " + current_npc.physical_description + " in a huanted neighborhood filled with foremen."
+		var header_prompt = "Act as a " + current_npc.physical_description + " in a huanted neighborhood filled with foremen. The payroll specialist at your construction company just showed up to your door to help you remember your password, so that you can submit your time card from HCSS Field."
 		header_prompt += "As a character, you are " + current_npc.personality + ". "
 		header_prompt += "Your location is " + current_npc.location_description + ". "
 		if current_npc.password_guessed:
@@ -82,7 +82,6 @@ func enter_new_dialogue (npc):
 func exit_dialogue ():
 	current_npc = null
 	messages = []
-	print(messages)
 	dialogue_box.visible = false
 
 func is_dialogue_active ():

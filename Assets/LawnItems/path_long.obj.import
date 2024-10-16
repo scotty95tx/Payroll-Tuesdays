@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://br31t3i657ub6"
+path="res://.godot/imported/path_long.obj-ebc7c1fb4fbce4623a5938b17cb54eee.mesh"
+
+[deps]
+
+files=["res://.godot/imported/path_long.obj-ebc7c1fb4fbce4623a5938b17cb54eee.mesh"]
+
+source_file="res://Assets/LawnItems/path_long.obj"
+dest_files=["res://.godot/imported/path_long.obj-ebc7c1fb4fbce4623a5938b17cb54eee.mesh", "res://.godot/imported/path_long.obj-ebc7c1fb4fbce4623a5938b17cb54eee.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

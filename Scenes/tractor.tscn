@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dj7mpwlum8gpq"]
-
-[ext_resource type="PackedScene" uid="uid://1gxhtxynls73" path="res://Assets/Halloween Bits/Assets/fbx/tractor.fbx" id="1_ix5nr"]
-
-[node name="tractor" instance=ExtResource("1_ix5nr")]

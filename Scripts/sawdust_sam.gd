@@ -8,3 +8,4 @@ extends CharacterBody3D
 @export var password : String = "cheesepuffs"
 @export var foreman_name : String = "Sawdust Sam"
 var password_guessed : bool = false
+var rings_left = 3

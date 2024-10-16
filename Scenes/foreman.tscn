@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://gw06mwen05ti"]
 
-[ext_resource type="PackedScene" uid="uid://qyikp4fmfqrc" path="res://Assets/KayKit_Adventurers_1.0_EXTRA/Characters/gltf/Engineer.glb" id="1_c1t36"]
+[ext_resource type="PackedScene" uid="uid://qyikp4fmfqrc" path="res://Assets/Character_Assets/Characters/gltf/Engineer.glb" id="1_c1t36"]
 [ext_resource type="Script" path="res://Scripts/bob.gd" id="2_vapa6"]
 
 [node name="Foreman" instance=ExtResource("1_c1t36")]

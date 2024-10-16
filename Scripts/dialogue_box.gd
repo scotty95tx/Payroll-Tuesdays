@@ -8,6 +8,8 @@ extends Panel
 @onready var talk_input : TextEdit = get_node("PlayerTextInput")
 @onready var talk_button : Button = get_node("Talk")
 @onready var leave_button : Button = get_node("Leave")
+@onready var control_node = get_node("/root/World/CanvasLayer/Control")
+@onready var win_screen = get_node("/root/World/WinningScreen")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,6 +30,13 @@ func _on_talk_pressed() -> void:
 	elif talk_input.text == game_manager.current_npc.password:
 		game_manager.timecards_submitted += 1
 		score_node.update_score()
+		if game_manager.timecards_submitted == 7:
+			player_node.visible = false
+			player_node.is_dialogue_active = true
+			control_node.visible = false
+			win_screen.visible = true
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		score_node.update_score()
 		game_manager.current_npc.password_guessed = true
 		game_manager.dialogue_request("Celebrate and tell the player that you have sent your time card in and ready to get inside and away from the haunted skeletons. Stay in character.")
 	else :
@@ -38,7 +47,6 @@ func _on_talk_pressed() -> void:
 
 
 func _on_leave_pressed() -> void:
-	print("dialogue_exited")
 	game_manager.exit_dialogue()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	player_node.is_dialogue_active = false
